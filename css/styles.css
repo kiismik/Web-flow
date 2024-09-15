@@ -47,21 +47,33 @@ body {
 	max-width: 1200px;
 	padding: 0 15px;
 	margin: 0 auto;
-	 
+
 }
 
 
 
 /* HERO */
 
+
+
+
+
 .hero {
 	height: 600px;
-	background: #2F303A;
 	display: flex;
 	align-items: center;
-	text-align: center;
+	justify-content: center;
+	background-image: url('../img/hero.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
 }
 
+.hero::before{
+	background-color:rgba(47, 48, 58, 0.4);
+	
+}
 .hero-title {
 	font-size: 44px;
 	text-transform: uppercase;
@@ -71,6 +83,8 @@ body {
 	color: #fff;
 	margin-bottom: 30px;
 	letter-spacing: 5px;
+	z-index: 2;
+	text-align: center;
 }
 
 .hero-butoon {
@@ -82,9 +96,12 @@ body {
 	font-size: 16px;
 	padding: 16px 46px 15px;
 	border-radius: 4px;
-	letter-spacing: 0.96px;
 	display: inline-block;
+
+
 }
+
+
 
 .hero-butoon:hover {
 	background: #1385e2;
@@ -92,29 +109,80 @@ body {
 
 /* ABOUT */
 .about {
-	padding: 94px 0 0;
+	padding-top: 94px;
+}
+.about-cards{
+	display: flex;
+
 }
 
-.about-cards {
+.card_fishk{
 	display: flex;
+	flex-direction: column;
 	gap: 30px;
 }
 
-.about-card {
-	flex: 1 1 25%;
+.img_1, .img_2, .img_3, .img_4 {
+	background: #F5F4FA;
+	width: 270px;
+	height: 120px;
+position: relative;
 }
 
-.about-title {
-	margin: 0 0 10px;
-	text-transform: uppercase;
-	font-weight: 700;
-}
 
-.about-desc {
-	color: #757575;
-	text-align: justify;
-}
 
+.img_1::before{
+	position: absolute;
+	content: '';
+	background: url('../img/about1.svg') no-repeat;
+	top: 25px;
+	left: 100px;
+
+	width: 70px;
+	height: 70px;
+}
+.img_2::before{
+	position: absolute;
+	content: '';
+	background: url('../img/about2.svg') no-repeat;
+	top: 25px;
+	left: 100px;
+	width: 70px;
+	height: 70px;
+}
+.img_3::before{
+	position: absolute;
+	content: '';
+	background: url('../img/about3.svg') no-repeat;
+	top: 25px;
+	left: 100px;
+	width: 70px;
+	height: 70px;
+}
+.img_4::before{
+	position: absolute;
+	content: '';
+	background: url('../img/about4.svg') no-repeat;
+	top: 25px;
+	left: 100px;
+	width: 70px;
+	height: 70px;
+}
+.card_about{
+
+	text-align: left;
+}
+.about-title { 
+	margin: 0 0 10px; 
+	text-transform: uppercase; 
+	font-weight: 700; 
+   } 
+	
+   .about-desc { 
+	color: #757575; 
+	
+	
+   }
 /* DO */
 
 .do {
@@ -300,9 +368,11 @@ body {
 	color: #757575;
 	margin-top: 4px;
 }
-.portfolio_card{
+
+.portfolio_card {
 	box-shadow: 0px 2px 1px 0px #00000033;
 }
+
 .card_img {
 	position: relative;
 }
@@ -326,6 +396,7 @@ body {
 	background: rgba(33, 150, 243, 0.9);
 	color: #fff;
 }
+
 /* HEADER */
 .header {
 	padding: 24px 0;
@@ -383,46 +454,50 @@ body {
 
 
 /* hover for footer */
-.header-menu{
-	display: flex; 
- 	justify-content: center; 
- 	gap: 30px; 
+.header-menu {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
 }
-.header-menu li{
+
+.header-menu li {
 	position: relative;
 }
-.header-menu>li a { 
-	display: block; 
-	color: #220433; 
-	padding: 10px 30px; 
+
+.header-menu>li a {
+	display: block;
+	color: #220433;
+	padding: 10px 30px;
 	left: -79px;
-	text-decoration: none; 
-   } 
-   
-.header_first_list{
+	text-decoration: none;
+}
+
+.header_first_list {
 	background: #fff;
 	position: absolute;
 	top: 100%;
 	display: none;
 	outline: #212121;
 	width: 150px;
-	left: 50%; 
- 	margin-left: -60px; 
- 	padding-top: 20px;
- 	white-space: nowrap; 
+	left: 50%;
+	margin-left: -60px;
+	padding-top: 20px;
+	white-space: nowrap;
 	z-index: 1;
 }
-.header-menu>li:hover .header_first_list { 
-	display: block; 
-   } 
-.header_first_list ul { 
-	position: absolute; 
-	right: 100%; 
-	top: 0; 
-	white-space: nowrap; 
-	display: none; 
-   } 
-   
+
+.header-menu>li:hover .header_first_list {
+	display: block;
+}
+
+.header_first_list ul {
+	position: absolute;
+	right: 100%;
+	top: 0;
+	white-space: nowrap;
+	display: none;
+}
+
 
 
 .header_first_list li, .header_second_list li {
@@ -431,7 +506,7 @@ body {
 	text-decoration: none;
 	display: block;
 	padding: 8px 16px;
-	position: relative; 
+	position: relative;
 }
 
 .header_first_list li a:hover {
@@ -441,14 +516,12 @@ body {
 
 .header_first_list li:hover ul {
 	display: block;
- }
+}
 
- .header_second_list {
+.header_second_list {
 	background: #fff;
- }
+}
 
- .header_second_list li a{
-	
+.header_second_list li a {
 	padding: 8px 30px
- }
- 
+}
